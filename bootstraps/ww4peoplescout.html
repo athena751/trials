@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>People Scout Test</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" media="all">
+		<script src="js/jQuery/jQuery-2.1.4.min.js"></script>
+		<script src="js/bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="style.css" media="all">
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.min.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->	
+	</head>
+	<body onload="displayAboutText();">
+		<div class="container" style="meida:all;padding-top:15px;padding-bottom:15px;">
+			<div class="row" >
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" 
+						style="background-color: #3b8dbc;height: 50px">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color:#ebf0f6;">
+					<h2 style="padding-bottom:10px;">Web developer List</h2>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<div class="panel panel-default">
+								<table class="table"><tr>
+									<th style="background-color: #00c0ef;" class="letter_th col-md-4 col-lg-4">A</th>
+									<th style="background-color: #fff;" class="col-md-8 col-lg-8">
+										INTERNET USAGE<p style="font-size:1.4em;"><strong>90%</strong></p>
+									</th>
+								</tr></table>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<div class="panel panel-default">
+								<table class="table"><tr>
+									<th style="background-color: #dd4c3b;" class="letter_th col-md-4 col-lg-4">B</th>
+									<th style="background-color: #fff;" class="col-md-8 col-lg-8">
+										LIKES<p style="font-size:1.4em;"><strong>41,410</strong></p>
+									</th>
+								</tr></table>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<div class="panel panel-default">
+								<table class="table"><tr>
+									<th style="background-color: #00a65a;" class="letter_th col-md-4 col-lg-4">C</th>
+									<th style="background-color: #fff;" class="col-md-8 col-lg-8">
+										IMAGES<p style="font-size:1.4em;"><strong>760</strong></p>
+									</th>
+								</tr></table>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<div class="panel panel-default">
+								<table class="table"><tr>
+									<th style="background-color: #f39c11;" class="letter_th col-md-4 col-lg-4">D</th>
+									<th style="background-color: #fff;" class="col-md-8 col-lg-8">
+										TWEETS<p style="font-size:1.4em;"><strong>2,000</strong></p>
+									</th>
+								</tr></table>
+							</div>
+						</div>
+					</div>	
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<div class="panel panel-default" style="box-shadow:0px -2px 3px #3b8dbc;">
+								<table class="table" style="text-align:center;">
+									<tr><td style="background-color: #fff;">
+										<img src="images/avatar5.png" class="img-circle" 
+												style="width:110px;height:110px;border:3px solid #bbb;padding:3px;"/>
+										<h4><strong>Test User</strong></h4>
+										<p style="color:#777">Web developer</p>
+										<button type="button" class="btn btn-primary col-xs-12 col-sm-12 col-md-12 col-lg-12" 
+													data-toggle="collapse" data-target="#demo">
+										Follow
+										</button>
+									</td></tr>
+								</table>
+								<div id="demo" class="collapse">
+									<table class="table">
+									<tr><th>Followers</th><td style="text-align:right;color:#3b8dbc;">1,322</td></tr>
+									<tr><th>Following</th><td style="text-align:right;color:#3b8dbc;">543</td></tr>
+									<tr style="border-bottom: 1px solid #ddd;">
+										<th>Friends</th><td style="text-align:right;color:#3b8dbc;">13,287</td>
+									</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-9 col-lg-9" style="padding-left:0px !important;">
+							<div class="panel panel-default" style="box-shadow:0px -2px 3px #bbb;">
+								<table class="table">
+								<caption style="font-size:1.5em;">A simple table</caption>
+								<thead>
+								<tr style="border-top: 1px solid #ddd;">
+									<th class="col-md-1 col-lg-1">ID</th>
+									<th class="col-md-2 col-lg-2">User</th>
+									<th class="col-md-2 col-lg-2">Date</th>
+									<th class="col-md-2 col-lg-2">Status</th>
+									<th class="col-md-5 col-lg-5">Reason</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>1</td>
+									<td>John Citizen</td>
+									<td>11-7-2014</td>
+									<td><span style="background-color: #00a65a;color:#fff;padding:5px;border-radius:3px;"><strong>Approved</strong></span></td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>John Pierce</td>
+									<td>15-7-2014</td>
+									<td><span style="background-color: #f39c11;color:#fff;padding:5px;border-radius:3px;"><strong>Pending</strong></span></td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Bob Doe</td>
+									<td>19-7-2014</td>
+									<td><span style="background-color: #3b8dbc;color:#fff;padding:5px;border-radius:3px;"><strong>Approved</strong></span></td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Mike Doe</td>
+									<td>21-7-2014</td>
+									<td><span style="background-color: #dd4c3b;color:#fff;padding:5px;border-radius:3px;"><strong>Denied</strong></span></td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+								</tr>
+								</tbody>
+								</table>
+							</div>
+							<div class="well" style="background-color: #fff !important;">
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a href="#" onclick="displayAboutText();">About</a>
+									</li>
+									<li><a href="#" onclick="displayContactText();">Contact</a></li>
+								</ul>
+								<p id="explanation_about">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+								Nam augue massa, mollis id fringilla at, molestie ac est. 
+								Fusce non leo sit amet tortor pretium ornare. 
+								Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+								Mauris venenatis interdum orci id dignissim. Vestibulum luctus et mauris nec sodales.  
+								felis. Suspendisse metus purus, cursus nec tincidunt a, ultrices et arcu. 
+								</p>
+								<p id="explanation_contact">
+									wayne21738442@gmail.com 
+								</p>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="row">
+			  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" 
+						style="background-color: #3b8dbc;height: 5px">
+			  </div>
+			</div>
+		</div>
+		<script>
+			function displayAboutText() {
+				document.getElementById('explanation_about').style.display="block";
+				document.getElementById('explanation_contact').style.display="none";
+			}
+
+			function displayContactText() {
+				document.getElementById('explanation_about').style.display="none";
+				document.getElementById('explanation_contact').style.display="block";
+			}
+			
+			$(document).ready(function () {
+				$('ul.nav > li').click(function (e) {
+					e.preventDefault();
+					$('ul.nav > li').removeClass('active');
+					$(this).addClass('active');
+				});
+			});
+		</script>
+	</body>
+</html>
