@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/mosaic.js"></script>
+		<script type="text/javascript" src="js/client.js"></script>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mosaic</title>
+<!-- Start of the input from weiwang on 03/11/2016. -->
+		<style type="text/css">
+			.thumb {
+				max-width:1024px;
+				margin:0 auto;
+			}
+			.imgStyle {
+				max-width:600px;
+				border: 5px solid #00f;
+			}
+			.container{
+				margin: 0 auto;
+				text-align: center;
+				overflow: hidden;
+			}
+			.content {
+				font-size: 150%;
+				padding: 3em 0;
+			}
+
+		</style>
+		<!--[if lt IE 9]>
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="content">
+				<h2 style="align:left;">Upload your picture to see fancy effect<br/>
+					<span style="text-transform:uppercase;color:#ff8800;">
+						Only bmp/gif/jpeg/png/tiff file can be accepted
+					</span>
+				</h2>
+				<div id="error" style="display:none">
+					<span style="color:red;">Please select a valid image file only!</span><br/></div>
+				<div id="warnsize" style="display:none">
+					<span style="color:red;">Your file is too big ( more than 1MB ). Please select smaller file!
+					</span>
+					<br/>
+				</div>
+				<div align="center">
+					<table>
+						<tr>
+						<th style="text-align:left;">Select image file</th>
+						<td style="text-align:left;">
+							<input type="file" name="image_file" id="image_file" onchange="fileSelected();" />
+						</td>
+						</tr>
+						<tr>
+						<th style="text-align:left;">Change pixel resolution of each tile&nbsp;</th>
+						<td style="text-align:left;"><input type="range" min="0" max="50" value="2" id="range" />
+							<span id="output">2</span></td>
+						</tr>
+					</table>
+				</div>
+				<br/>
+				<div class="thumb">
+					<img class="imgStyle" src="js/1.jpg" alt="No image found!" id="preview" />
+				</div>
+			</div>
+		</div>
+		<script>
+			window.onload = function() {
+				var preview_img = document.getElementById('preview');
+				var pixelOpts = [ { resolution: 2 } ];
+				var pixelObject = preview_img.initPixelate( pixelOpts );
+				var range = document.getElementById('range');
+				var output = document.getElementById('output');
+			  
+				range.addEventListener( 'change', function( event ) {
+					var res = parseInt( event.target.value, 10 );
+					res = Math.floor( res / 2 ) * 2;
+					res = Math.max( 2, Math.min( 50, res ) );
+					output.textContent = res;
+					pixelOpts = [{resolution:res}];
+					var currentImage = document.getElementById('preview');
+					if(currentImage.getContext && currentImage.getContext('2d')){
+						pixelObject.render( pixelOpts );
+					}else{
+						pixelObject = currentImage.initPixelate( pixelOpts );
+						pixelObject.render( pixelOpts );
+					}
+				}, false );
+			}
+		</script>
+
+<!-- End of the input from weiwang on 03/11/2016. -->
+	</body>
+</html>
