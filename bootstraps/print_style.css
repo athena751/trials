@@ -5,6 +5,7 @@ body {
 	background-color:#fff;
 	padding-top:15px;
 	padding-bottom:15px;
+	-webkit-print-color-adjust: exact;
 }
 
 .letter_th{
@@ -12,7 +13,6 @@ body {
 	font-size: 3.5em;
 	color: #fff;
 	padding: 30px;
-	width: 35%;
 }
 
 a {
@@ -25,10 +25,6 @@ a {
 
 .background_color_lightblue {
 	background-color: #00c0ef;
-}
-
-.background_color_white {
-	background-color: #fff;
 }
 
 h2 {
