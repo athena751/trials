@@ -192,9 +192,9 @@ th {
   *,
   *:before,
   *:after {
-    color: #000 !important;
+    /*color: #000 !important;*/
     text-shadow: none !important;
-    background: transparent !important;
+    /*background: transparent !important;*/
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
   }
@@ -251,10 +251,10 @@ th {
   .table {
     border-collapse: collapse !important;
   }
-  .table td,
+  /*.table td,
   .table th {
     background-color: #fff !important;
-  }
+  }*/
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
