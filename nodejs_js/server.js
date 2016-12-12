@@ -23,27 +23,31 @@ http.createServer(function (req, res) {
   var m;
   if (pathname == '/') {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.createReadStream(dir + '/mosaic.html').pipe(res);
-	console.log('pathname: ' + pathname);
-	console.log('dir: ' + dir);
+	console.log("Dir is:" + dir);
+	fs.createReadStream(dir + '/mosaic.html').pipe(res);
     return;
   } else if (m = pathname.match(/^\/(js|css)\//)) {
+	console.log("M is:" + m.toString());
     var filename = dir + pathname;
     var stats = fs.existsSync(filename) && fs.statSync(filename);
     if (stats && stats.isFile()) {
-      res.writeHead(200, {'Content-Type': m[1] === 'js' ? 'application/javascript' : 'text/css'});
-      fs.createReadStream(filename).pipe(res);
-		console.log('pathname: ' + pathname);
-		console.log('dir: ' + dir);
-      return;
+		res.writeHead(200, {'Content-Type': m[1] === 'js' ? 'application/javascript' : 'text/css'});
+		fs.createReadStream(filename).pipe(res);
+		return;
     }
   } else if (m = pathname.match(/^\/color\/([0-9a-fA-F]{6})/)) {
     res.writeHead(200, {'Content-Type': 'image/svg+xml'});
     res.write(util.format(svgTemplate, mosaic.TILE_WIDTH, mosaic.TILE_HEIGHT, m[1]));
     res.end();
-	console.log('pathname: ' + pathname);
-	console.log('dir: ' + dir);
-	return;
+    return;
+  } else if (m = pathname.match(/^\/images\//)) {
+    var filename = dir + pathname;
+    var stats = fs.existsSync(filename) && fs.statSync(filename);
+    if (stats && stats.isFile()) {
+		res.writeHead(200, {'Content-Type': 'image/jpeg'});
+		fs.createReadStream(filename).pipe(res);
+		return;
+	}
   }
   res.writeHead(404, {'Content-Type': 'text/plain'});
   res.write('404 Not Found\n');
